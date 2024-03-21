@@ -1,0 +1,21 @@
+.image-login{
+    width: 10%;
+    height: 10%;
+    margin-top: 10%;
+}
+
+.login-top{
+    margin-top: 10%;
+
+}
+
+.head-center{
+    text-align: center;
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 768px) {
+    img{
+        display: none;
+    }
+}
