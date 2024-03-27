@@ -60,10 +60,17 @@
                     // 如果用户名和密码都不为空，则提交表单
                     $.ajax({
                         type: "post",
+<<<<<<< HEAD
                         url: "http://localhost:8080/Experiment1_war_exploded/LoginServlet",
                         // contentType: "application/json", // 确保发送的内容类型为JSON
                         dataType: "json", // 期望从服务器接收JSON格式的响应
                         data:({ // 将数据转换为JSON字符串
+=======
+                        url: "/Experiment1_war_exploded/LoginServlet",
+                        contentType: "application/json", // 确保发送的内容类型为JSON
+                        dataType: "json", // 期望从服务器接收JSON格式的响应
+                        data: JSON.stringify({ // 将数据转换为JSON字符串
+>>>>>>> 4d70b70d520d41a083e3b2e4d810e247b9ec12b8
                             username: username,
                             password: password
                         }),

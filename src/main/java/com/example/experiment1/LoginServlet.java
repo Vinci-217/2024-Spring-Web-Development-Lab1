@@ -18,6 +18,7 @@ public class LoginServlet extends HttpServlet {
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
 
+<<<<<<< HEAD
         // 添加CORS响应头
         resp.setHeader("Access-Control-Allow-Origin", "*"); // 允许所有域名访问
         resp.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE"); // 允许的HTTP方法
@@ -26,6 +27,22 @@ public class LoginServlet extends HttpServlet {
 
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+=======
+        // 从请求体读取完整的JSON字符串
+        StringBuilder sb = new StringBuilder();
+        String line;
+        try (BufferedReader reader = req.getReader()) {
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+        }
+        String jsonStr = sb.toString();
+
+        // 解析JSON数据
+        JsonObject json = JsonParser.parseString(jsonStr).getAsJsonObject();
+        String username = json.get("username").getAsString();
+        String password = json.get("password").getAsString();
+>>>>>>> 4d70b70d520d41a083e3b2e4d810e247b9ec12b8
 
         PrintWriter out = resp.getWriter();
         String jsonResp;
